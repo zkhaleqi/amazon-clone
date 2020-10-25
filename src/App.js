@@ -7,6 +7,7 @@ import Checkout from "./Checkout";
 import Login from "./Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+import Payment from "./Payment";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -35,12 +36,16 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
+          <Route path="/Login">
+            <Login></Login>
+          </Route>
           <Route path="/Checkout">
             <Header></Header>
             <Checkout></Checkout>
           </Route>
-          <Route path="/Login">
-            <Login></Login>
+          <Route path="/payment">
+            <Header></Header>
+            <Payment></Payment>
           </Route>
           <Route path="/">
             <Header></Header>
